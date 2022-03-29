@@ -170,7 +170,7 @@ cdef int have_float16 = ("float16" in sctypeDict)
 #----------------------------------------------------------------------
 
 # External declarations
-
+print('hello')
 
 # PyTables helper routines.
 cdef extern from "utils.h":
@@ -183,6 +183,7 @@ cdef extern from "utils.h":
   H5T_class_t getHDF5ClassID(hid_t loc_id, char *name, H5D_layout_t *layout,
                              hid_t *type_id, hid_t *dataset_id) nogil
 
+print('goodbye')
 
 # Functions from Blosc
 cdef extern from "blosc.h" nogil:
