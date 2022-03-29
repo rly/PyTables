@@ -65,18 +65,22 @@ jobs:
         with:
           path: ./wheelhouse/
 
-      - name: Set up Python ${{ matrix.python }}
+      - name: Set up Python ${{ matrix.python-version }}
         uses: conda-incubator/setup-miniconda@v2
         with:
           python-version: ${{ matrix.python-version }}
           auto-update-conda: true
-          channels: conda-forge
-          channel-priority: strict
+          # channels: conda-forge
+          # channel-priority: strict
 
       - name: Install tables on ${{ matrix.python-version }}
         run: |
           pip install numpy>=1.19.0 numexpr>=2.6.2
           pip install --no-index --find-links wheelhouse/artifact/ tables
+
+      - name: Test import
+        run: |
+          python -c "import tables"
 
       - name: Run tests on ${{ matrix.python-version }}
         run: |
