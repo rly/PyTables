@@ -203,3 +203,7 @@ cdef extern from "H5ARRAY.h" nogil:
 # TODO: drop
 cdef str cstr_to_pystr(const char* cstring):
   return cstring.decode('utf-8')
+
+
+def get_hdf5_version():
+  return "1.10.6"
