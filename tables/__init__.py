@@ -8,7 +8,7 @@ to efficiently cope with extremely large amounts of data.
 """
 
 # Necessary imports to get versions stored on the cython extension
-import .utilsextension
+from .utilsextension import get_hdf5_version as _get_hdf5_version
 
 
 __version__ = "3.7.1.dev0"
