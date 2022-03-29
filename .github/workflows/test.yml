@@ -68,7 +68,7 @@ jobs:
       - name: Set up Python ${{ matrix.python }}
         uses: conda-incubator/setup-miniconda@v2
         with:
-          python-version: ${{ matrix.python-vresion }}
+          python-version: ${{ matrix.python-version }}
           auto-update-conda: true
           channels: conda-forge
           channel-priority: strict
